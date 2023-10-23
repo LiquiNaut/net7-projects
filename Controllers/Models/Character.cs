@@ -7,7 +7,7 @@ namespace net7.Controllers.Models
 {
     public class Character
     {
-        public int MyProperty { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; } = "Boris";
 
