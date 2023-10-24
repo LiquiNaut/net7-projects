@@ -16,9 +16,15 @@ namespace net7.Controllers
             new Character{Name = "Samo"}
         };
         
-        [HttpGet]
+        //("GetAllChar") v [HttpGet("GetAllChar")] musime definovat, lebo su 2 get metody
+        [HttpGet("GetAllChar")]
         public ActionResult<List<Character>> Get(){
             return Ok(characters);
+        }
+
+        [HttpGet]
+        public ActionResult<Character> GetSingleChar(){
+            return Ok(characters[0]);
         }
     }
 }
