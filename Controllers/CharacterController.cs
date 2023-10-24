@@ -11,10 +11,14 @@ namespace net7.Controllers
     [Route("api/[controller]")]
     public class CharacterController : ControllerBase
     {
-        private static Character knight = new Character();
+        private static List<Character> characters = new List<Character>(){
+            new Character(),
+            new Character{Name = "Samo"}
+        };
+        
         [HttpGet]
-        public ActionResult<Character> Get(){
-            return Ok(knight);
+        public ActionResult<List<Character>> Get(){
+            return Ok(characters);
         }
     }
 }
