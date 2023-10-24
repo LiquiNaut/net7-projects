@@ -27,7 +27,15 @@ namespace net7.Services.CharacterService
 
         public Character GetCharacterById(int id)
         {
-            return characters.FirstOrDefault(c => c.Id == id);
+            //staci pridat ! ((null-forgiving) operator) na koniec vyrazu
+            //return characters.FirstOrDefault(c => c.Id == id)!;
+            
+            //alebo to osetrit cez throw Exception
+            var character = characters.FirstOrDefault(c => c.Id == id);
+            if(character is not null){
+                return character;
+            }
+            throw new Exception("Character not found");
         }
     }
 }
