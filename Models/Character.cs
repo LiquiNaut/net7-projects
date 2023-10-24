@@ -17,7 +17,7 @@ namespace net7.Controllers.Models
         public int Defense { get; set; } = 10;
         public int Intelligence { get; set; } = 10;
 
-        //getter, setter pre enum triedu s default hodnotou 
+        //getter, setter pre enum triedu s default hodnotou.
         public RpgClass Class { get; set; } = RpgClass.Knight;
     }
 }
