@@ -22,7 +22,7 @@ namespace net7.Controllers
 
         //("GetAllChar") v [HttpGet("GetAllChar")] musime definovat, lebo su 2 get metody
         [HttpGet("GetAllChar")]
-        public async Task<ActionResult<List<Character>>> Get(){
+        public async Task<ActionResult<ServiceResponse<List<Character>>>> Get(){
             return Ok(await _characterService.GetAllCharacters());
         }
 
@@ -32,7 +32,7 @@ namespace net7.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<List<Character>>> AddCharacter(Character newCharacter){
+        public async Task<ActionResult<ServiceResponse<List<Character>>>> AddCharacter(Character newCharacter){
             return Ok(await _characterService.AddCharacter(newCharacter));
         }
     }

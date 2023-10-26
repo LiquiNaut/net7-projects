@@ -1,3 +1,4 @@
+global using net7.Models;
 global using net7.Services.CharacterService;
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
